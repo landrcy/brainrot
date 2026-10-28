@@ -1,10 +1,65 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bombardiro Crocodilo · Brainrot Night Council</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a></nav>
-<main><div class="emoji" data-bang="BOOM!|KABOOM|CROCODILO!|💥|BOMBARDIRO" data-sound="boom" title="poke it">🐊✈️💣</div>
-<h1>bombardiro crocodilo</h1>
-<button class="bang" data-bang="BOOM!|KABOOM|CROCODILO!|💥|BOMBARDIRO" data-sound="boom">💣 DROP PAYLOAD</button>
-<div class="count" data-label="# bombs dropped (none of them were needed)">0 bombs dropped (none of them were needed)</div>
-<div class="lore"><p><b>Minister of Air Chaos.</b> Half crocodile, half WWII bomber, fully unsupervised. Flies over the council at night dropping bombs on anyone who says 'actually'.</p><p>Fuel: espresso and spite. Landing gear: optional.</p></div></main>
-<footer>verified by verity · 5 pages · soft may sit · soft does not lead · lore is vibes not history</footer>
-<script src="main.js"></script></body></html>
+<title>Bombardiro Crocodilo · Cockpit</title><link rel="stylesheet" href="base.css">
+<style>
+body{background:#020a04;color:#4dff7a;font-family:'Courier New',monospace;background-image:linear-gradient(#4dff7a08 1px,transparent 1px),linear-gradient(90deg,#4dff7a08 1px,transparent 1px);background-size:30px 30px}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(#0000 0 2px,#0003 2px 4px);z-index:40}
+.cockpit{max-width:1200px;margin:auto;padding:1rem;display:grid;grid-template-columns:240px 1fr 240px;gap:1rem}
+.panel{border:2px solid #4dff7a;padding:1rem;background:#031a08cc;box-shadow:0 0 15px #4dff7a44 inset}
+.panel h3{font-size:.8rem;letter-spacing:.2em;border-bottom:1px solid #4dff7a55;margin-bottom:.6rem;padding-bottom:.3rem}
+.hud{position:relative;min-height:420px;border:2px solid #4dff7a;border-radius:50% 50% 10px 10px/30% 30% 10px 10px;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,#0b3a14,#020a04 70%)}
+.horizon{position:absolute;left:-10%;right:-10%;top:55%;border-top:2px dashed #4dff7a88;animation:roll 6s ease-in-out infinite}@keyframes roll{50%{transform:rotate(4deg)}}
+.reticle{position:absolute;left:50%;top:45%;width:110px;height:110px;margin:-55px;border:2px solid #4dff7a;border-radius:50%}
+.reticle::before,.reticle::after{content:'';position:absolute;background:#4dff7a}.reticle::before{left:50%;top:-20px;bottom:-20px;width:2px}.reticle::after{top:50%;left:-20px;right:-20px;height:2px}
+.target{position:absolute;font-size:2rem;cursor:crosshair;transition:left 1.5s,top 1.5s}
+.title{position:absolute;top:1rem;left:0;right:0;text-align:center}
+h1{font-size:clamp(1.5rem,4vw,2.6rem);letter-spacing:.15em;text-shadow:0 0 10px #4dff7a}
+.croc{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-size:4rem;filter:drop-shadow(0 0 10px #4dff7a)}
+.gauge{height:14px;border:1px solid #4dff7a;margin:.3rem 0 .8rem}.gauge i{display:block;height:100%;background:#4dff7a;transition:width .3s}
+button.drop{width:100%;padding:1rem;font:900 1.2rem 'Courier New';background:#300;color:#ff4d4d;border:3px solid #ff4d4d;cursor:pointer;letter-spacing:.1em;text-shadow:0 0 8px red}
+button.drop:hover{background:#ff4d4d;color:#000}
+.log{font-size:.75rem;height:180px;overflow:auto;white-space:pre-wrap;opacity:.85}
+.brief{max-width:1200px;margin:1rem auto 3rem;padding:0 1rem;display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.brief p,.brief li{font-size:.9rem;margin:.4rem 0}.brief li{margin-left:1.2rem}
+.blink{animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+.red{color:#ff4d4d}
+footer{text-align:center;padding:1rem;opacity:.6;font-size:.8rem}
+@media(max-width:900px){.cockpit,.brief{grid-template-columns:1fr}}
+</style></head><body>
+<nav class="council"><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a><a href="verity.html">✅ Verity</a></nav>
+<div class="cockpit">
+<div class="panel"><h3>▣ FLIGHT DATA</h3>
+<div>ALT <span id="alt">32000</span> FT</div><div>SPD 666 KTS</div><div>HDG <span id="hdg">270</span>°</div><div>CALLSIGN: CROC-1</div><div>STATUS: <span class="blink">ARMED</span></div>
+<h3 style="margin-top:1rem">▣ PAYLOAD</h3>
+<div>BOMBS <span id="ammo">12</span>/12</div><div class="gauge"><i id="ammoG" style="width:100%"></i></div>
+<div>FUEL (espresso)</div><div class="gauge"><i id="fuel" style="width:80%"></i></div>
+<div>TAIL WAG</div><div class="gauge"><i style="width:100%"></i></div></div>
+<div class="hud" id="hud"><div class="title"><h1>BOMBARDIRO CROCODILO</h1><small>half crocodile · half WWII bomber · fully committed</small></div>
+<div class="horizon"></div><div class="reticle"></div><div class="target" id="tgt" style="left:30%;top:60%">🏘️</div><div class="croc">🐊✈️</div></div>
+<div class="panel"><h3>▣ MISSION LOG</h3><div class="log" id="log">[00:00] engines: crocodile
+[00:01] wings: also crocodile
+[00:02] awaiting order...</div>
+<button class="drop" id="drop">☢ DROP PAYLOAD</button>
+<p style="font-size:.7rem;margin-top:.5rem">Or click the target directly. Press <b>R</b> to reload.</p>
+<div style="margin-top:.6rem">HITS: <b id="hits">0</b> · SCORE: <b id="score">0</b></div></div>
+</div>
+<div class="brief">
+<div class="panel"><h3>▣ CLASSIFIED PILOT DOSSIER — EYES ONLY</h3>
+<p><b>NAME:</b> Bombardiro Crocodilo. <b>RANK:</b> Air Marshal of the Night Council. <b>SPECIES:</b> Crocodylus bombardierus.</p>
+<p>Hatched on a runway outside Naples in an egg made of jet fuel. Swallowed a B-17 at age two and kept the wings. Flies exclusively at night because "the moon is a good target light." Has never landed. Refuels mid-air by eating clouds.</p>
+<p>He bombs with love. Mostly. His payloads include: bombs, more bombs, and once (by accident) an entire crate of cannoli over Palermo — still remembered as <i>Il Giorno Dolce</i>.</p>
+<h3 style="margin-top:1rem">▣ RULES OF ENGAGEMENT</h3><ol><li>Never bomb a café. Cappuccina will know.</li><li>Do not fly below Tralalero's ocean (sharks have range).</li><li>Patapim's forest is a no-fly zone after 2 AM (frost on wings).</li><li>Always say "BOMBARDIRO" before the drop. Twice if it's a big one.</li><li>Report every drop to Verity. Unverified booms don't count.</li></ol></div>
+<div class="panel"><h3>▣ INTERCEPTED RADIO</h3><p>"CROC-1 to tower, requesting permission to boom." — <i>"Denied." — "Booming anyway."</i></p><p class="red">"MAMMA MIA, he's turning around—"</p><p>"Tung Tung's on the ground, he'll mop up."</p>
+<h3 style="margin-top:1rem">▣ SPECS</h3><p>Wingspan: 1 crocodile<br>Teeth: 68, all armed<br>Bomb bay: stomach<br>Max range: Italy<br>Kills: <span class="secret">≥ vibes</span></p></div></div>
+<footer>CROC-1 · Brainrot Night Council · all booms verified by <a href="verity.html" style="color:#4dff7a">Verity</a> · press B for a barrel roll</footer>
+<script src="main.js"></script>
+<script>
+let ammo=12,hits=0,score=0,alt=32000;const $=i=>document.getElementById(i),log=t=>{const l=$('log');l.textContent+='\n['+new Date().toTimeString().slice(3,8)+'] '+t;l.scrollTop=1e9};
+const tgts=['🏘️','🏭','🌉','🚢','🍝','🗼','🏰'];
+function move(){const t=$('tgt');t.style.left=(10+Math.random()*75)+'%';t.style.top=(30+Math.random()*40)+'%'}setInterval(move,1800);
+function drop(e,onTarget){if(!ammo){BR.sfx('buzz');log('PAYLOAD EMPTY — press R');return}ammo--;$('ammo').textContent=ammo;$('ammoG').style.width=ammo/12*100+'%';BR.sfx('boom');log('BOMBARDIRO! payload away');
+ setTimeout(()=>{const r=$('hud').getBoundingClientRect();BR.pop(e?e.clientX:r.left+r.width/2,e?e.clientY:r.top+r.height/2,'💥 BOOM','#ff4d4d');$('hud').animate([{transform:'translate(5px,3px)'},{transform:'translate(-5px,-3px)'},{transform:'none'}],{duration:120,iterations:3});
+ if(onTarget||Math.random()<.3){hits++;score+=100*(1+hits%5);$('hits').textContent=hits;$('score').textContent=score;log('direct hit: '+$('tgt').textContent+' (verified)');$('tgt').textContent=tgts[Math.random()*tgts.length|0]}else log('miss. blame the wind.')},600)}
+$('drop').onclick=()=>drop(null,false);$('tgt').onclick=e=>drop(e,true);
+addEventListener('keydown',e=>{if(e.key==='r'||e.key==='R'){ammo=12;$('ammo').textContent=12;$('ammoG').style.width='100%';log('reloaded. stomach full.')}if(e.key==='b'||e.key==='B'){$('hud').animate([{transform:'rotate(0)'},{transform:'rotate(360deg)'}],{duration:900});log('barrel roll!!')}});
+setInterval(()=>{alt+=Math.random()*200-100|0;$('alt').textContent=alt;$('hdg').textContent=(260+Math.random()*20|0);const f=$('fuel');f.style.width=Math.max(5,parseFloat(f.style.width)-1)+'%'},1000);
+</script></body></html>

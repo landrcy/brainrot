@@ -1,10 +1,65 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tung Tung Tung Sahur · Brainrot Night Council</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a></nav>
-<main><div class="emoji" data-bang="TUNG!|TUNG!!|TUNG!!!|SAHUR!|BONK" data-sound="thud" title="poke it">🪵🥁</div>
-<h1>tung tung tung sahur</h1>
-<button class="bang" data-bang="TUNG!|TUNG!!|TUNG!!!|SAHUR!|BONK" data-sound="thud">🪵 BANG THE LOG</button>
-<div class="count" data-label="# tungs delivered to the sleeping village">0 tungs delivered to the sleeping village</div>
-<div class="lore"><p><b>Chair of the Night Council.</b> A wooden man with a wooden bat and zero chill. At 3 AM he patrols the streets: <i>tung tung tung tung tung tung tung tung tung SAHUR</i>. If you do not answer the third tung, he comes inside.</p><p>Council rule #1: the log always gets the last word. Click it. He's watching.</p></div></main>
-<footer>verified by verity · 5 pages · soft may sit · soft does not lead · lore is vibes not history</footer>
-<script src="main.js"></script></body></html>
+<title>Tung Tung Tung Sahur · Brainrot Night Council</title><link rel="stylesheet" href="base.css">
+<style>
+body{background:#120a04 repeating-linear-gradient(92deg,#1d1108 0 14px,#170d06 14px 22px,#21140a 22px 40px);color:#f3dcb8;font-family:Georgia,'Times New Roman',serif}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;max-width:1100px;margin:auto;padding:3rem 1.5rem;align-items:center}
+h1{font:900 clamp(3rem,9vw,7rem)/.85 Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#ffb347;text-shadow:5px 5px 0 #5a2d0c,10px 10px 0 #000}
+h1 span{display:block;font-size:.45em;color:#f3dcb8;letter-spacing:.3em}
+.clock{font:700 2rem 'Courier New',monospace;color:#ff5a36;background:#000;padding:.4rem 1rem;display:inline-block;border:3px solid #5a2d0c;margin:1rem 0}
+.drum{width:min(340px,80vw);aspect-ratio:1;border-radius:50%;margin:auto;background:radial-gradient(circle,#e8c48a 0 45%,#a8692c 46% 60%,#5a2d0c 61% 70%,#2b1405 71%);border:10px solid #3a1d07;box-shadow:0 0 0 6px #ffb34744,0 25px 50px #000;cursor:pointer;display:grid;place-items:center;font-size:5rem;user-select:none;transition:transform .05s}
+.drum:active{transform:scale(.95) rotate(-3deg)}
+.counter{text-align:center;margin-top:1rem;font:700 1.2rem 'Courier New',monospace}.counter b{font-size:3rem;color:#ffb347;display:block}
+.rank{text-align:center;font-style:italic;color:#c9a16b}
+.wrap{max-width:1100px;margin:auto;padding:1rem 1.5rem 4rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
+.plank{background:#2b1607;border:2px solid #5a2d0c;padding:1.5rem;box-shadow:inset 0 0 30px #000;position:relative}
+.plank::before,.plank::after{content:'●';position:absolute;top:6px;color:#8a5a2b;font-size:.7rem}.plank::before{left:8px}.plank::after{right:8px}
+h2{font:900 1.6rem Impact,sans-serif;color:#ffb347;letter-spacing:.05em;margin-bottom:.6rem;text-transform:uppercase}
+ol li,ul li{margin:.4rem 0 .4rem 1.2rem}
+.patrol{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:.8rem}
+.patrol div{aspect-ratio:1;background:#1a0d04;border:1px solid #5a2d0c;display:grid;place-items:center;font-size:1.2rem}
+.patrol .me{background:#ffb347}
+table{width:100%;border-collapse:collapse;font-family:'Courier New',monospace;font-size:.9rem}td{border-bottom:1px dashed #5a2d0c;padding:.35rem}td:last-child{text-align:right;color:#ffb347}
+blockquote{font-size:1.5rem;font-style:italic;border-left:6px solid #ffb347;padding:1rem 1.5rem;margin:2rem 0;background:#0008}
+.tungs{font:900 1rem Impact;letter-spacing:.2em;color:#ff5a36;overflow:hidden;white-space:nowrap;border-block:3px solid #5a2d0c;padding:.5rem 0;background:#000}
+.tungs span{display:inline-block;animation:scroll 18s linear infinite}@keyframes scroll{to{transform:translateX(-50%)}}
+footer{text-align:center;padding:2rem;color:#8a5a2b;font-size:.85rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+</style></head><body>
+<nav class="council"><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a><a href="verity.html">✅ Verity</a></nav>
+<div class="tungs"><span>TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG SAHUR · TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG SAHUR · TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG SAHUR · TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG TUNG SAHUR · </span></div>
+<section class="hero"><div>
+<h1>Tung Tung Tung<span>— SAHUR —</span></h1>
+<div class="clock" id="clock">03:00:00</div>
+<p>Chair of the Brainrot Night Council. A man carved from a single log, holding a bat carved from a smaller log. He does not sleep. He makes sure <i>you</i> don't either. The clock above is always 3 AM — that is his time zone.</p>
+</div><div>
+<div class="drum" id="drum" title="hit it">🪵</div>
+<div class="counter">TUNGS DELIVERED<b id="n">0</b></div>
+<div class="rank" id="rank">Rank: Sleeping Villager</div>
+</div></section>
+<div class="wrap">
+<blockquote>"If you do not answer the third tung… I come inside." <br><small>— Tung Tung Tung Sahur, every night, 3:00 AM</small></blockquote>
+<div class="cols">
+<div class="plank"><h2>📜 Lore</h2><p>Born when a lightning bolt hit an old olive tree during Ramadan, Tung Tung woke up already holding the bat. His first word was <b>tung</b>. His second word was also tung. His ninth word was <b>sahur</b>, and the village has been awake ever since.</p><p style="margin-top:.6rem">He was elected Chair of the Night Council unopposed, because nobody wanted to tell him no at 3 AM.</p></div>
+<div class="plank"><h2>📏 Patrol Rules</h2><ol><li>Exactly nine tungs, then SAHUR. Never eight.</li><li>The third tung is a question. Answer it.</li><li>Doors are a suggestion.</li><li>The bat is not a weapon. It is a drum that walks.</li><li>The log always gets the last word.</li><li>Soft may sit. Soft does not lead.</li></ol></div>
+<div class="plank"><h2>📊 Stat Sheet</h2><table>
+<tr><td>Material</td><td>100% olive wood</td></tr><tr><td>Height</td><td>1 log + hat</td></tr><tr><td>Bat weight</td><td>"enough"</td></tr><tr><td>Bangs / night</td><td>~41,000</td></tr><tr><td>Hours slept</td><td>0</td></tr><tr><td>Doors opened</td><td>classified</td></tr><tr><td>Fear rating</td><td>🪵🪵🪵🪵🪵</td></tr></table></div>
+</div>
+<div class="plank"><h2>🗺️ Live 3 AM Patrol (he moves every few seconds)</h2><p>Click a house to knock first. If he lands on your house, you get tung'd.</p><div class="patrol" id="patrol"></div></div>
+<div class="cols">
+<div class="plank"><h2>🗣️ Village Testimony</h2><p>"I heard eight tungs and thought I was safe." — <i>former villager</i></p><p>"He rearranged my furniture with rhythm." — <i>Nonna Pia</i></p><p>"I answered the third tung. We are friends now. I am so tired." — <i>Marco, 14</i></p></div>
+<div class="plank"><h2>🎖️ Bang Ranks</h2><ul><li>0 — Sleeping Villager</li><li>9 — Heard a Tung</li><li>27 — Wide Awake</li><li>99 — Sahur Apprentice</li><li>300 — Log Adjacent</li><li>1000 — <span class="secret">???</span></li></ul></div>
+</div>
+</div>
+<footer>Brainrot Night Council · 6 pages · verified by <a href="verity.html" style="color:#ffb347">Verity</a> · lore is vibes not history · <span class="secret" title="try typing it">psst: type "sahur"</span></footer>
+<script src="main.js"></script>
+<script>
+const n=document.getElementById('n'),rank=document.getElementById('rank');let c=BR.store('tung');
+const ranks=[[0,'Sleeping Villager'],[9,'Heard a Tung'],[27,'Wide Awake'],[99,'Sahur Apprentice'],[300,'Log Adjacent'],[1000,'THE LOG ITSELF']];
+function upd(){n.textContent=c;rank.textContent='Rank: '+ranks.filter(r=>c>=r[0]).pop()[1]}upd();
+document.getElementById('drum').onclick=e=>{c++;BR.store('tung',c);upd();BR.sfx('thud');BR.pop(e.clientX,e.clientY,c%9===0?'SAHUR!':'TUNG','#ffb347');
+ if(c%9===0)BR.toast('🪵 SAHUR! nine tungs complete');if(c===1000)BR.toast('🏆 you are the log now')};
+let s=0;setInterval(()=>{s=(s+1)%3600;const m=String(s/60|0).padStart(2,'0'),x=String(s%60).padStart(2,'0');document.getElementById('clock').textContent='03:'+m+':'+x},1000);
+const P=document.getElementById('patrol');const houses=[...Array(16)].map((_,i)=>{const d=document.createElement('div');d.textContent='🏠';d.onclick=()=>{BR.sfx('bloop');d.textContent='🚪'};P.appendChild(d);return d});
+let pos=0;setInterval(()=>{houses.forEach(h=>h.classList.remove('me'));pos=(pos+1+Math.random()*3|0)%16;houses[pos].classList.add('me');if(houses[pos].textContent==='🚪'){BR.toast('🪵 door was open. he came inside.');houses[pos].textContent='🏠'}},2200);
+</script></body></html>

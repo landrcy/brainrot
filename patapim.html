@@ -1,10 +1,165 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brr Brr Patapim · Brainrot Night Council</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a></nav>
-<main><div class="emoji" data-bang="BRR!|BRRR!!|PATAPIM|❄️❄️|*shiver*" data-sound="brr" title="poke it">🌲🥶👃</div>
-<h1>brr brr patapim</h1>
-<button class="bang" data-bang="BRR!|BRRR!!|PATAPIM|❄️❄️|*shiver*" data-sound="brr">❄️ STRIKE THE FROST STICK</button>
-<div class="count" data-label="# frost rituals performed">0 frost rituals performed</div>
-<div class="lore"><p><b>Keeper of the Frost Stick.</b> A forest creature with a giant nose and monkey feet. Every midnight he taps the frost stick three times and the whole council shivers: <i>brr brr patapim</i>.</p><p>His hat is named Slim. Do not ask Slim questions.</p></div></main>
-<footer>verified by verity · 5 pages · soft may sit · soft does not lead · lore is vibes not history</footer>
-<script src="main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brr Brr Patapim · Frost Stick Corridor</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  body{
+    background:#040810;
+    color:#e8f4ff;
+    font-family:system-ui,sans-serif;
+    background-image:
+      radial-gradient(ellipse at 50% -10%,#1a4a6a55,transparent 50%),
+      linear-gradient(180deg,#061018 0%,#040810 40%,#020508 100%);
+    overflow-x:hidden;
+  }
+  .snow{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+  .flake{position:absolute;top:-10px;color:#b8e7ff;opacity:.55;animation:fall linear infinite;font-size:10px}
+  @keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+  .corridor{max-width:980px;margin:0 auto;padding:1rem 1rem 3rem;position:relative;z-index:3}
+  .icicles{height:28px;background:repeating-linear-gradient(90deg,#9ad8ff 0 10px,transparent 10px 22px);opacity:.4;clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);margin-bottom:1rem}
+  .stage{text-align:center;padding:1.5rem 1rem 2rem;border:2px solid #5aa8d8;border-radius:1.2rem;background:linear-gradient(160deg,#0a2030ee,#061820cc);box-shadow:0 0 40px #4db8ff22,inset 0 0 60px #4db8ff15}
+  .stick{font-size:clamp(4rem,18vw,8rem);cursor:pointer;display:inline-block;filter:drop-shadow(0 0 20px #7ec8ff);user-select:none;transition:transform .1s}
+  .stick:active{transform:rotate(-8deg) scale(.95)}
+  h1{font:900 clamp(2rem,8vw,4.2rem)/.95 Impact,"Arial Black",sans-serif;margin:.3rem 0;color:#b8e7ff;text-shadow:0 0 16px #4db8ff,3px 3px 0 #0a3048;letter-spacing:.03em;text-transform:uppercase}
+  .tag{opacity:.85;margin:.4rem 0 1rem}
+  button.strike{
+    font:900 1.2rem Impact,system-ui,sans-serif;padding:.9rem 1.6rem;border:none;border-radius:.9rem;
+    background:linear-gradient(180deg,#9ad8ff,#2a7fbf);color:#021018;cursor:pointer;
+    box-shadow:0 8px 0 #134a72,0 0 24px #4db8ff66;text-transform:uppercase
+  }
+  button.strike:active{transform:translateY(5px);box-shadow:0 3px 0 #134a72}
+  .count{margin:1rem 0;color:#9ad8ff;font-weight:700;font-size:1.15rem}
+  .slim{
+    display:inline-block;margin:.5rem 0 0;padding:.45rem 1rem;border:2px dashed #9ad8ff;
+    border-radius:999px;color:#9ad8ff;font:600 .9rem monospace;cursor:help
+  }
+  .grid{display:grid;gap:1rem;margin:1.5rem 0}
+  @media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+  .card{border:2px solid #5aa8d8;border-radius:1rem;padding:1rem 1.1rem;background:#061820dd}
+  .card h2{margin:0 0 .55rem;font:900 1.15rem Impact,system-ui;color:#b8e7ff;text-transform:uppercase;letter-spacing:.04em}
+  .card ul,.card ol{margin:.2rem 0 0;padding-left:1.15rem}
+  .card li{margin:.3rem 0;font-size:.95rem}
+  .stats{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+  .stats span{padding:.35rem .7rem;border:1px solid #7ec8ff;border-radius:.5rem;background:#021018;font:700 .85rem monospace;color:#9ad8ff}
+  .insult{margin:1rem 0;padding:1rem;border:3px dashed #ffe12f;border-radius:1rem;transform:rotate(-1deg);font:700 1.15rem Impact,system-ui;color:#ffe12f;text-align:center}
+  .lore{margin-top:1rem;padding:1rem 1.15rem;border:2px solid #7ec8ff;border-radius:1rem;background:#0a2030aa;font-size:.98rem}
+  footer{text-align:center;padding:1.2rem;opacity:.65;font:600 .8rem monospace;border-top:1px solid #1a4058;position:relative;z-index:3}
+  footer a{color:#9ad8ff}
+  .fog{position:fixed;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,#7ec8ff18);pointer-events:none;z-index:2}
+</style>
+</head>
+<body>
+<nav class="council">
+  <a href="index.html">🥁 Tung Tung</a>
+  <a href="bombardiro.html">🐊 Bombardiro</a>
+  <a href="tralalero.html">🦈 Tralalero</a>
+  <a href="cappuccina.html">☕ Cappuccina</a>
+  <a href="patapim.html">🥶 Patapim</a>
+  <a href="verity.html">✅ Verity</a>
+</nav>
+<div class="snow" id="snow" aria-hidden="true"></div>
+<div class="fog" aria-hidden="true"></div>
+<div class="corridor">
+  <div class="icicles" aria-hidden="true"></div>
+  <div class="stage">
+    <div class="stick" id="stick" title="tap the frost stick">🌲🥶👃</div>
+    <h1>brr brr patapim</h1>
+    <p class="tag"><b>Keeper of the Frost Stick.</b> Midnight corridor. Three taps. The council shivers. Soft sits on the bench.</p>
+    <button class="strike" id="strike">❄️ STRIKE THE FROST STICK</button>
+    <div class="count" id="count">0 frost rituals performed</div>
+    <div class="slim" id="slim" title="do not ask">hat name: SLIM · do not ask Slim questions · Slim answers in frost</div>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Who is Patapim</h2>
+      <ul>
+        <li>Fuzzy stick-wielding night creature. Cold chant. Deadpan stare.</li>
+        <li>Monkey feet on frozen wood. Giant nose that sniffs soft vibes and rejects them.</li>
+        <li>Speaks in loops: <i>brr brr patapim</i>. Nonsense wisdom. Stick taps for punctuation.</li>
+        <li>Gone by sunrise. The corridor empties. Slim stays on the peg.</li>
+      </ul>
+      <div class="stats">
+        <span>frost 100</span><span>soft 0</span><span>taps ∞</span><span>mornings −1</span>
+      </div>
+    </section>
+    <section class="card">
+      <h2>The Frost Stick</h2>
+      <ul>
+        <li>Not a toy. Not soft. Wood that remembers every tap.</li>
+        <li>One tap = warning. Two taps = frost rising. Three taps = patapim.</li>
+        <li>If you hug the stick, the stick does not hug back.</li>
+        <li>Bombardiro: no-fly over this forest after 2 AM. Frost on wings.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Corridor Law</h2>
+      <ul>
+        <li>Frost leads this page. Soft may sit on the bench by the door.</li>
+        <li>Soft does not hold the stick. Soft does not rename Slim.</li>
+        <li>Chant only. Helper smile melts into ice and falls off.</li>
+        <li>67 allowed. Gyatt claims need pictures. Sus gets a tap.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Midnight Ritual</h2>
+      <ol>
+        <li>Enter the corridor. Breath becomes fog.</li>
+        <li>Nod to Slim. Do not ask Slim anything.</li>
+        <li>Strike the frost stick. Count the shivers.</li>
+        <li>Leave before the first warm ray. Patapim does not do mornings.</li>
+      </ol>
+      <button class="strike" id="ritual" style="margin-top:.8rem;font-size:1rem">🌀 PERFORM RITUAL</button>
+    </section>
+  </div>
+
+  <div class="insult">"your chant is warm. your stick is a twig. your hat has a name and it is soft."</div>
+
+  <div class="lore">
+    <p><b>Lore is vibes, not history.</b> Every midnight Patapim taps the frost stick three times and the whole council shivers: <i>brr brr patapim</i>. Bombardiro flies lower. Tralalero’s sneakers squeak on ice. Cappuccina’s foam freezes into a heart and cracks. Tung Tung bangs once in reply. Verity stamps the shiver as “observed.”</p>
+    <p style="margin-top:.6rem">His hat is named Slim. Slim has never spoken. Slim has never not spoken. Do not ask Slim questions.</p>
+  </div>
+</div>
+<footer>frost corridor · Brainrot Night Council · verified by <a href="verity.html">verity</a> · soft may sit · soft does not lead · type "patapim" anywhere</footer>
+<script src="main.js"></script>
+<script>
+(function(){
+  const words=['BRR!','BRRR!!','PATAPIM','❄️❄️','*shiver*','SLIM SAYS NO','TAP·TAP·TAP'];
+  let n=BR.store('frost')||0;
+  const count=document.getElementById('count');
+  count.textContent=n+' frost rituals performed';
+  function strike(e){
+    n++;BR.store('frost',n);count.textContent=n+' frost rituals performed';
+    BR.sfx('brr');
+    const x=(e&&e.clientX)||innerWidth/2, y=(e&&e.clientY)||innerHeight/3;
+    BR.pop(x-20,y-10,words[n%words.length],'#9ad8ff');
+    document.body.animate([{filter:'brightness(1)'},{filter:'brightness(1.4)'},{filter:'brightness(1)'}],{duration:220});
+    if(n%3===0)BR.toast('brr brr patapim. the council shivers.');
+  }
+  document.getElementById('strike').onclick=strike;
+  document.getElementById('stick').onclick=strike;
+  document.getElementById('ritual').onclick=()=>{
+    BR.toast('fog → nod Slim → strike → leave before sunrise');
+    for(let i=0;i<3;i++)setTimeout(()=>strike({clientX:innerWidth/2+i*30,clientY:innerHeight/3}),i*280);
+  };
+  document.getElementById('slim').onclick=()=>{BR.sfx('buzz');BR.toast('Slim answers in frost. that was not an answer.');};
+  // snow
+  const snow=document.getElementById('snow');
+  for(let i=0;i<36;i++){
+    const f=document.createElement('span');f.className='flake';f.textContent=['❄','❅','·'][i%3];
+    f.style.left=Math.random()*100+'%';f.style.animationDuration=(6+Math.random()*10)+'s';
+    f.style.animationDelay=(-Math.random()*10)+'s';f.style.fontSize=(8+Math.random()*14)+'px';
+    snow.appendChild(f);
+  }
+  let buf='';
+  addEventListener('keydown',e=>{
+    buf=(buf+e.key.toLowerCase()).slice(-12);
+    if(buf.endsWith('patapim')){BR.sfx('brr');BR.toast('brr brr patapim. he heard the name.');}
+  });
+})();
+</script>
+</body>
+</html>

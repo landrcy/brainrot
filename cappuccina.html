@@ -1,10 +1,147 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ballerina Cappuccina · Brainrot Night Council</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a></nav>
-<main><div class="emoji" data-bang="MIMIMI|PIROUETTE|☕✨|FOAM!|cappuccinaaa" data-sound="ding" title="poke it">☕🩰</div>
+<title>Ballerina Cappuccina · Soft Delegate Salon</title><link rel="stylesheet" href="base.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap');
+body{background:#1a0f14;color:#fff5f0;font-family:'Cormorant Garamond',Georgia,serif;background-image:
+radial-gradient(ellipse at 20% 0%,#5c2a3a66,#1a0f14 55%),
+radial-gradient(ellipse at 90% 80%,#3d204455,#0000 50%)}
+.stage{max-width:1100px;margin:0 auto;padding:1rem 1.2rem 3rem}
+.marquee{overflow:hidden;white-space:nowrap;border:1px solid #e8b4c8;border-radius:999px;background:#2a1520cc;margin:1rem 0;padding:.4rem 0;color:#ffd6e5;font:600 .9rem system-ui}
+.marquee span{display:inline-block;padding-left:100%;animation:scroll 28s linear infinite}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.hero{display:grid;grid-template-columns:280px 1fr;gap:1.5rem;align-items:center;margin:1.5rem 0}
+.portrait{position:relative;border-radius:24px;overflow:hidden;border:3px solid #e8b4c8;box-shadow:0 0 40px #ff7eb655,0 20px 40px #0008;background:#000;aspect-ratio:1}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .badge{position:absolute;bottom:.6rem;left:.6rem;right:.6rem;background:#1a0f14ee;border:1px solid #e8b4c8;border-radius:12px;padding:.5rem .7rem;font:600 .75rem system-ui;text-align:center;color:#ffd6e5}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;color:#ffe4ec;margin:0 0 .4rem;font-style:italic}
+.tag{display:inline-block;font:600 .75rem system-ui;letter-spacing:.15em;text-transform:uppercase;color:#1a0f14;background:#e8b4c8;padding:.25rem .7rem;border-radius:999px;margin-bottom:.8rem}
+.lead{font-size:1.15rem;opacity:.9;max-width:36rem}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0}
+button.spin{font:700 1rem system-ui;padding:.85rem 1.4rem;border:0;border-radius:999px;cursor:pointer;background:linear-gradient(135deg,#ff9ec4,#e85a9b);color:#1a0f14;box-shadow:0 8px 24px #e85a9b66}
+button.spin:hover{transform:scale(1.04)}
+button.ghost{font:600 .9rem system-ui;padding:.75rem 1.1rem;border:1px solid #e8b4c8;border-radius:999px;background:transparent;color:#ffd6e5;cursor:pointer}
+.count{font:600 .95rem system-ui;color:#ffb6d0;margin-top:.4rem}
+.cup{font-size:5rem;text-align:center;filter:drop-shadow(0 0 20px #ff9ec4);cursor:pointer;user-select:none;transition:transform .3s}
+.cup.twirl{animation:twirl .7s ease}
+@keyframes twirl{0%{transform:rotate(0) scale(1)}40%{transform:rotate(220deg) scale(1.25)}100%{transform:rotate(360deg) scale(1)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.card{background:#2a1520aa;border:1px solid #e8b4c866;border-radius:18px;padding:1.1rem 1.2rem;backdrop-filter:blur(6px)}
+.card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:#ffe4ec;margin:0 0 .6rem;font-style:italic}
+.card h3{font:700 .8rem system-ui;letter-spacing:.08em;text-transform:uppercase;color:#ff9ec4;margin:0 0 .5rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.stat{background:#1a0f14;border:1px solid #e8b4c844;border-radius:12px;padding:.7rem;text-align:center}
+.stat b{display:block;font:900 1.4rem system-ui;color:#ff9ec4}
+.stat span{font:600 .7rem system-ui;opacity:.75;letter-spacing:.05em}
+.insult{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.35rem;color:#ffd6e5;text-align:center;padding:1rem;border:1px dashed #e8b4c8;border-radius:16px;background:#3d204433}
+ol.ritual{margin:0;padding-left:1.2rem}
+ol.ritual li{margin:.4rem 0;font-size:1.05rem}
+.latte{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1rem 0}
+.latte button{width:64px;height:64px;border-radius:50%;border:2px solid #e8b4c8;background:#3d2044;cursor:pointer;font-size:1.6rem}
+.latte button:hover{background:#e85a9b;transform:scale(1.08)}
+.booth{border:2px solid #e8b4c8;border-radius:20px;padding:1.2rem;background:linear-gradient(180deg,#3d204466,#1a0f14);text-align:center}
+.booth b{color:#ff9ec4}
+footer{text-align:center;padding:1.5rem;opacity:.65;font:500 .85rem system-ui}
+footer a{color:#ff9ec4}
+@media(max-width:720px){.hero{grid-template-columns:1fr}.portrait{max-width:260px;margin:0 auto}}
+</style></head><body>
+<nav class="council"><a href="index.html">🥁 Tung Tung</a><a href="bombardiro.html">🐊 Bombardiro</a><a href="tralalero.html">🦈 Tralalero</a><a href="cappuccina.html">☕ Cappuccina</a><a href="patapim.html">🥶 Patapim</a><a href="verity.html">✅ Verity</a></nav>
+<div class="stage">
+<div class="marquee"><span>☕ SOFT DELEGATE SALON · HEART LATTE UNBROKEN · THREE PIROUETTES · ONE SIP · NEVER LEAD · FOAM IS HARD · SOFT MAY SIT · 🩰</span></div>
+
+<div class="hero">
+<div class="portrait"><img src="cappuccina.jpg" alt="Ballerina Cappuccina"><div class="badge">en pointe · cup head · leadership 0</div></div>
+<div>
+<span class="tag">Soft Delegate · seated</span>
 <h1>ballerina cappuccina</h1>
-<button class="bang" data-bang="MIMIMI|PIROUETTE|☕✨|FOAM!|cappuccinaaa" data-sound="ding">🩰 PIROUETTE</button>
-<div class="count" data-label="# twirls of pure foam">0 twirls of pure foam</div>
-<div class="lore"><p><b>Soft Delegate (seated, not leading).</b> A ballerina whose head is a cappuccino. Graceful, frothy, deeply caffeinated. She may sit at the council. She does not lead the council. She is fine with this. She is pirouetting.</p><p>Warning: spinning too fast creates latte art on the ceiling.</p></div></main>
-<footer>verified by verity · 5 pages · soft may sit · soft does not lead · lore is vibes not history</footer>
-<script src="main.js"></script></body></html>
+<p class="lead">A ballerina whose head is a cappuccino. Graceful. Frothy. Deeply caffeinated. She may sit at the council. She does not lead. She is fine with this. She is pirouetting.</p>
+<div class="actions">
+<button class="spin" id="spin">🩰 PIROUETTE</button>
+<button class="ghost" id="sip">☕ ONE SIP</button>
+<button class="ghost" id="ritual">🕯️ PERFORM RITUAL</button>
+</div>
+<div class="count" id="count">0 twirls of pure foam</div>
+</div>
+</div>
+
+<div class="cup" id="cup" title="poke the foam">☕🩰</div>
+
+<div class="grid">
+<div class="card">
+<h2>📊 Official Stats</h2>
+<div class="stats">
+<div class="stat"><b>99</b><span>CAFFEINE</span></div>
+<div class="stat"><b>88</b><span>GRACE</span></div>
+<div class="stat"><b>0</b><span>LEADERSHIP</span></div>
+<div class="stat"><b>∞</b><span>SPINS</span></div>
+</div>
+</div>
+<div class="card">
+<h2>🚫 Secret Rule</h2>
+<p><b>Soft may sit only if the heart latte stays unbroken.</b> Break the foam heart and the salon closes until sahur. Verity stamps every unbroken pour.</p>
+<p style="margin-top:.6rem;opacity:.8">Warning: spinning too fast creates latte art on the ceiling. Tung Tung has cleaned it. Tung Tung will not clean it again.</p>
+</div>
+</div>
+
+<div class="card" style="margin:1rem 0">
+<h2>🎨 Latte Art Gallery <small style="font-size:.55em;font-family:system-ui;opacity:.7">(tap a pour)</small></h2>
+<div class="latte">
+<button data-fact="Heart: the official seal. Soft sits under this one." title="heart">❤️</button>
+<button data-fact="Rosetta: for nights when the plane flies low." title="rosetta">🌿</button>
+<button data-fact="Swan: Tralalero tried to bite it. Failed. Soft laughed." title="swan">🦢</button>
+<button data-fact="Tulip: Patapim says it looks like frost. Wrong. It's foam." title="tulip">🌷</button>
+<button data-fact="Blank foam: reserved for soft. Soft does not pour. Soft sits." title="blank">⬜</button>
+</div>
+</div>
+
+<div class="grid">
+<div class="card">
+<h2>👔 Salon Dress Code</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr;margin:0">
+<div><h3>✅ Allowed</h3><ul style="margin:0;padding-left:1.1rem"><li>Pointe shoes</li><li>Pink tulle</li><li>Ceramic confidence</li><li>Espresso breath</li></ul></div>
+<div><h3>❌ Banned</h3><ul style="margin:0;padding-left:1.1rem"><li>Flat pours</li><li>Soft leading</li><li>Broken hearts</li><li>Decaf (a crime)</li></ul></div>
+</div>
+</div>
+<div class="card">
+<h2>🗯️ Signature Insult</h2>
+<div class="insult">"your pour is flat. your foam is sad. your pointe is soft."</div>
+</div>
+</div>
+
+<div class="card" style="margin:1rem 0">
+<h2>🕯️ The Ritual</h2>
+<ol class="ritual">
+<li><b>Three pirouettes.</b></li>
+<li><b>One sip.</b></li>
+<li><b>Never lead the council.</b></li>
+<li>Keep the heart latte unbroken.</li>
+<li>Soft sits. Foam stays hard.</li>
+</ol>
+</div>
+
+<div class="booth">
+<h2 style="font-family:'Playfair Display',Georgia,serif;font-style:italic;margin:0 0 .5rem">🛋️ Soft Seat</h2>
+<p>Reserved: <b>Soft</b>. Soft may sit. Soft does not lead. Soft watches the spins and does not touch the cup. Everyone respects the seat. Leadership remains <b>0</b>.</p>
+</div>
+</div>
+<footer>Soft Delegate Salon · Brainrot Night Council · lore is vibes not history · verified by <a href="verity.html">Verity</a></footer>
+<script src="main.js"></script>
+<script>
+(function(){
+const W=['MIMIMI','PIROUETTE','☕✨','FOAM!','cappuccinaaa','EN POINTE','❤️'];
+let n=(window.BR&&BR.store('capp'))||0;
+const c=document.getElementById('count'),cup=document.getElementById('cup');
+const show=()=>c.textContent=n+' twirls of pure foam';show();
+function twirl(x,y){
+  n++;if(window.BR){BR.store('capp',n);BR.sfx('chime');if(x>0)BR.pop(x,y,W[n%W.length],['#ff9ec4','#ffe4ec','#e85a9b'][n%3])}
+  show();cup.classList.remove('twirl');void cup.offsetWidth;cup.classList.add('twirl');
+}
+document.getElementById('spin').addEventListener('click',e=>twirl(e.clientX,e.clientY));
+cup.addEventListener('click',e=>twirl(e.clientX,e.clientY));
+document.getElementById('sip').addEventListener('click',()=>{window.BR&&(BR.sfx('bloop'),BR.toast('☕ one sip. foam intact. soft still seated.'))});
+document.querySelectorAll('.latte button').forEach(b=>b.addEventListener('click',()=>{window.BR&&(BR.toast('🎨 '+b.dataset.fact),BR.sfx('bloop'))}));
+document.getElementById('ritual').addEventListener('click',e=>{
+  const s=['three pirouettes','one sip','never lead','heart unbroken','soft sits 🛋️'];
+  s.forEach((t,i)=>setTimeout(()=>{window.BR&&BR.pop(e.clientX-40+i*8,e.clientY-28*i,t,'#ff9ec4');if(i<3)twirl(-999,-999)},i*420));
+});
+})();
+</script></body></html>
