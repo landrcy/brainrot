@@ -1,0 +1,22 @@
+:root{--bg:#07060f;--fg:#fdf6e3;--acc:#ff2fd6;--acc2:#2fffc1;--warn:#ffe12f}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 20% 10%,#1d1145,var(--bg) 60%);color:var(--fg);font-family:Impact,"Arial Black",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;padding:1rem;background:#000a;position:sticky;top:0;z-index:5;border-bottom:3px dashed var(--acc)}
+nav a{color:var(--fg);text-decoration:none;padding:.4rem .8rem;border:2px solid var(--acc2);border-radius:999px;font-size:.95rem;transition:transform .15s,background .15s}
+nav a:hover,nav a[aria-current]{background:var(--acc2);color:#000;transform:rotate(-4deg) scale(1.1)}
+main{flex:1;max-width:900px;margin:auto;padding:2rem 1rem;text-align:center}
+h1{font-size:clamp(2.4rem,10vw,6rem);margin:.2em 0;line-height:.95;text-transform:uppercase;color:var(--warn);text-shadow:4px 4px 0 var(--acc),8px 8px 0 #000;animation:wob 2s infinite ease-in-out}
+@keyframes wob{50%{transform:rotate(-2deg) scale(1.03)}}
+.emoji{font-size:clamp(5rem,25vw,10rem);display:inline-block;cursor:pointer;transition:transform .1s;user-select:none}
+.emoji:hover{transform:rotate(10deg) scale(1.1)}
+p{font-family:system-ui,sans-serif;font-size:1.15rem;line-height:1.5}
+.lore{background:#ffffff10;border:2px solid var(--acc);border-radius:1rem;padding:1rem 1.2rem;text-align:left;margin:1.5rem 0}
+button.bang{font:inherit;font-size:1.6rem;padding:1rem 2rem;border:none;border-radius:1rem;background:var(--acc);color:#fff;box-shadow:0 8px 0 #7a0066;cursor:pointer;text-transform:uppercase}
+button.bang:active{transform:translateY(6px);box-shadow:0 2px 0 #7a0066}
+.count{font-size:1.4rem;color:var(--acc2);margin:1rem}
+.pop{position:fixed;pointer-events:none;font-size:2.2rem;color:var(--warn);text-shadow:3px 3px 0 #000;animation:pop .9s forwards;z-index:9}
+@keyframes pop{to{transform:translateY(-120px) rotate(20deg) scale(1.6);opacity:0}}
+.shake{animation:shake .3s}
+@keyframes shake{25%{transform:translate(6px,-4px)}50%{transform:translate(-6px,4px)}75%{transform:translate(4px,6px)}}
+footer{text-align:center;padding:1.2rem;font-family:monospace;color:#bbb;border-top:1px solid #333}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
